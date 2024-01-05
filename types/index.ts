@@ -15,86 +15,82 @@ export type UpdateUserParams = {
   photo: string
 }
 
-// ====== EVENT PARAMS
-export type CreateEventParams = {
+// ====== LISTING PARAMS
+export type CreateListingParams = {
   userId: string
-  event: {
-    title: string
-    description: string
-    location: string
-    imageUrl: string
-    startDateTime: Date
-    endDateTime: Date
-    categoryId: string
-    price: string
-    isFree: boolean
-    url: string
-  }
-  path: string
-}
-
-export type UpdateEventParams = {
-  userId: string
-  event: {
+  listing: {
     _id: string
-    title: string
-    imageUrl: string
-    description: string
-    location: string
-    startDateTime: Date
-    endDateTime: Date
-    categoryId: string
-    price: string
-    isFree: boolean
-    url: string
+    title: string,
+    condition: string,
+    location: string;
+    genre: string[],
+    console: string,
+    price: number,
+    categoryId: string,
+    datePosted: Date,
   }
   path: string
 }
 
-export type DeleteEventParams = {
-  eventId: string
+export type UpdateListingParams = {
+  userId: string
+  listing: {
+    _id: string
+    title: string,
+    condition: string,
+    location: string;
+    genre: string[],
+    console: string,
+    price: number,
+    categoryId: string,
+    datePosted: Date,
+  }
   path: string
 }
 
-export type GetAllEventsParams = {
+export type DeleteListingParams = {
+  listingId: string
+  path: string
+}
+
+export type GetAllListingParams = {
   query: string
   category: string
   limit: number
   page: number
 }
 
-export type GetEventsByUserParams = {
+export type GetListingsByUserParams = {
   userId: string
   limit?: number
   page: number
 }
 
-export type GetRelatedEventsByCategoryParams = {
+export type GetRelatedListingsByCategoryParams = {
   categoryId: string
   eventId: string
   limit?: number
   page: number | string
 }
 
-export type Event = {
+export type Listing = {
   _id: string
-  title: string
-  description: string
-  price: string
-  isFree: boolean
-  imageUrl: string
-  location: string
-  startDateTime: Date
-  endDateTime: Date
-  url: string
-  organizer: {
-    _id: string
-    firstName: string
-    lastName: string
-  }
+  title: string,
+  condition: string,
+  location: string;
+  genre: string[],
+  console: string,
+  price: number,
+  categoryId: string,
+  datePosted: Date,
   category: {
     _id: string
     name: string
+  },
+  user: {
+    _id: string
+    firstName: string
+    lastName: string
   }
 }
 
@@ -105,23 +101,22 @@ export type CreateCategoryParams = {
 
 // ====== ORDER PARAMS
 export type CheckoutOrderParams = {
-  eventTitle: string
-  eventId: string
+  listingTitle: string
+  listingId: string
   price: string
-  isFree: boolean
   buyerId: string
 }
 
 export type CreateOrderParams = {
   stripeId: string
-  eventId: string
+  listingId: string
   buyerId: string
   totalAmount: string
   createdAt: Date
 }
 
-export type GetOrdersByEventParams = {
-  eventId: string
+export type GetOrdersByListingParams = {
+  listingId: string
   searchString: string
 }
 
