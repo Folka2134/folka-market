@@ -1,14 +1,24 @@
 export const CategoryList = [
   {
-    label: "Electronics",
-    route: "/products/Electronics"
+    label: "Action",
+    route: "/games/action"
   },
   {
-    label: "Furniture",
-    route: "/products/Furniture"
+    label: "Farming",
+    route: "/games/farming"
   },
   {
-    label: "Fashion",
-    route: "/products/Fashion"
+    label: "Racing",
+    route: "/games/racing"
   },
 ]
+
+export const defaultListingValues = {
+  id: "",
+	title: "",
+	condition: "",
+	location: "",
+	price: "",
+	genre: "",
+	console: "",
+}
