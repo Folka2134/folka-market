@@ -9,20 +9,24 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between w-full h-14">
-        <DropdownMenu>
-          <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Saved items</DropdownMenuItem>
-            <DropdownMenuItem>Watch List</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex gap-5">
+          <DropdownMenu>
+            <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Saved items</DropdownMenuItem>
+              <DropdownMenuItem>Watch List</DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Button className="bg-pink-400">Create listing</Button>
+        </div>
         <div className="flex w-32 justify-end gap-3">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
