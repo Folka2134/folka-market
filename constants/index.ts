@@ -18,7 +18,8 @@ export const defaultListingValues = {
 	title: "",
 	condition: "",
 	location: "",
-	price: "",
-	genre: "",
 	console: "",
+	price: "",
+	categoryId: "",
+  datePosted: new Date(),
 }
