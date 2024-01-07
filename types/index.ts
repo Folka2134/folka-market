@@ -19,14 +19,13 @@ export type UpdateUserParams = {
 export type CreateListingParams = {
   userId: string
   listing: {
-    _id: string
+    imageUrl: string,
     title: string,
     condition: string,
     location: string;
-    genre: string[],
     console: string,
-    price: number,
-    categoryId: string,
+    price: string,
+    category: string,
     datePosted: Date,
   }
   path: string
@@ -39,10 +38,9 @@ export type UpdateListingParams = {
     title: string,
     condition: string,
     location: string;
-    genre: string[],
     console: string,
-    price: number,
-    categoryId: string,
+    price: string,
+    category: string,
     datePosted: Date,
   }
   path: string
@@ -67,7 +65,7 @@ export type GetListingsByUserParams = {
 }
 
 export type GetRelatedListingsByCategoryParams = {
-  categoryId: string
+  category: string
   eventId: string
   limit?: number
   page: number | string
@@ -78,15 +76,10 @@ export type Listing = {
   title: string,
   condition: string,
   location: string;
-  genre: string[],
   console: string,
-  price: number,
-  categoryId: string,
+  price: string,
+  category: string,
   datePosted: Date,
-  category: {
-    _id: string
-    name: string
-  },
   user: {
     _id: string
     firstName: string

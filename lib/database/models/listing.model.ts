@@ -2,6 +2,7 @@ import { Schema, model, models, Document } from "mongoose";
 
 export interface IListing extends Document {
   _id: string
+  imageUrl: string
   title: string,
   condition: string,
   location: string;
@@ -14,6 +15,7 @@ export interface IListing extends Document {
 
 
 const ListingSchema = new Schema({
+  imageUrl: { type: String, required: true },
   title: { type: String, required: true },
   condition: { type: String, required: true },
   location: { type: String, required: true },
