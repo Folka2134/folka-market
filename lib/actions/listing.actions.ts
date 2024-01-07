@@ -67,7 +67,7 @@ export const deleteListing = async ({ listingId, path }: DeleteListingParams) =>
   }
 }
 
-export const getAllListings = async ({ query, limit= 6, page}: GetAllListingParams) => {
+export const getAllListings = async ({limit= 6}: GetAllListingParams) => {
   try {
     await connectToDatabase()
     

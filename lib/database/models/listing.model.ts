@@ -6,10 +6,10 @@ export interface IListing extends Document {
   title: string,
   condition: string,
   location: string;
-  console: string,
-  price: number,
-  datePosted: Date,
   category: string,
+  console: string,
+  price: string,
+  datePosted: Date,
   user: { _id: string, firstName: string, lastName: string },
 }
 
@@ -21,7 +21,7 @@ const ListingSchema = new Schema({
   location: { type: String, required: true },
   category: { type: String, required: true },
   console: { type: String, required: true },
-  price: { type: Number, required: true },
+  price: { type: String, required: true },
   datePosted: { type: Date, default: Date.now },
   user: { type: Schema.Types.ObjectId, ref: 'User' },
 })

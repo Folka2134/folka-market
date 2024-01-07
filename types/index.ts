@@ -52,10 +52,7 @@ export type DeleteListingParams = {
 }
 
 export type GetAllListingParams = {
-  query: string
-  category: string
   limit: number
-  page: number
 }
 
 export type GetListingsByUserParams = {
