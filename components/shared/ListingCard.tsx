@@ -28,7 +28,10 @@ const ListingCard = ({ listing }: ListingCardProps) => {
             {listing.title}
           </p>
           <p className="">
-            by <span className="text-[#95A2F0]">{listing.title}</span>
+            by{" "}
+            <span className="text-[#95A2F0]">
+              {listing.user.firstName} {listing.user.lastName}
+            </span>
           </p>
         </div>
       </Link>

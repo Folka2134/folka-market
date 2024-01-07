@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center ">
       <Banner />
-      <section className="my-10">
+      <section className="my-10 w-full">
         <ListingList
           data={listings?.data}
           emptyTitle="No Jobs Found"
