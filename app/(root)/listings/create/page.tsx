@@ -6,6 +6,7 @@ const CreateListingPage = () => {
   const { sessionClaims } = auth();
 
   const userId = sessionClaims?.userId as string;
+  console.log(userId);
 
   return (
     <>
@@ -13,7 +14,7 @@ const CreateListingPage = () => {
         <h1 className="text-center my-10 font-bold text-2xl">Create Listing</h1>
 
         <div className="wrapper">
-          <ListingForm userId={userId} type="create" />
+          <ListingForm userId={userId} type="Create" />
         </div>
       </section>
     </>
