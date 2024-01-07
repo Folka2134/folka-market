@@ -5,8 +5,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
@@ -14,7 +12,7 @@ import { Button } from "../ui/button";
 const Navbar = () => {
   return (
     <header className="w-full border-b">
-      <div className="wrapper flex items-center justify-between w-full h-14">
+      <div className="flex items-center justify-between w-full h-14">
         <div className="flex gap-5">
           <DropdownMenu>
             <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
@@ -25,7 +23,9 @@ const Navbar = () => {
               <DropdownMenuItem>Settings</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button className="bg-pink-400">Create listing</Button>
+          <Button className="bg-pink-400">
+            <Link href="/listings/create">Create listing</Link>
+          </Button>
         </div>
         <div className="flex w-32 justify-end gap-3">
           <SignedIn>
