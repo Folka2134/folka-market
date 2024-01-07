@@ -21,6 +21,11 @@ import FormDropDown from "./FormDropdown";
 import { categories } from "@/constants";
 import { conditions } from "@/constants";
 import { consoles } from "@/constants";
+import { useUploadThing } from "@/lib/uploadthing";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { createListing } from "@/lib/actions/listing.actions";
+import { FileUploader } from "./FileUploader";
 
 const initialValues = defaultListingValues;
 
@@ -30,6 +35,10 @@ type ListingFormProps = {
 };
 
 const ListingForm = ({ userId, type }: ListingFormProps) => {
+  const [files, setFiles] = useState<File[]>([]);
+  const router = useRouter();
+
+  const { startUpload } = useUploadThing("imageUploader");
   // 1. Define your form.
   const form = useForm<z.infer<typeof listingFormSchema>>({
     resolver: zodResolver(listingFormSchema),
@@ -37,15 +46,58 @@ const ListingForm = ({ userId, type }: ListingFormProps) => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof listingFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof listingFormSchema>) {
+    let uploadedImageUrl = values.imageUrl;
+
+    if (files.length > 0) {
+      const uploadedImage = await startUpload(files);
+
+      if (!uploadedImage) return;
+
+      uploadedImageUrl = uploadedImage[0].url;
+    }
+
+    if (type === "Create") {
+      console.log("trying to create");
+
+      try {
+        const newJob = await createListing({
+          listing: {
+            ...values,
+            imageUrl: uploadedImageUrl,
+          },
+          userId,
+          path: "/profile",
+        });
+        if (newJob) {
+          form.reset();
+          router.push(`/listings/${newJob._id}`);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="imageUrl"
+          render={({ field }) => (
+            <FormItem className="w-full">
+              <FormControl className="h-72">
+                <FileUploader
+                  onFieldChange={field.onChange}
+                  imageUrl={field.value}
+                  setFiles={setFiles}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="title"
