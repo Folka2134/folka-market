@@ -11,14 +11,18 @@ type OrdersPageProps = {
 
 const OrdersPage = async ({ params: { id } }: OrdersPageProps) => {
   const userListings = await getListingsByUser({ userId: id, page: 1 });
+  const { sessionClaims } = auth();
+  const currentUser = sessionClaims?.userId as string;
 
   return (
     <div>
-      <ListingList
-        data={userListings?.data}
-        emptyTitle="No user orders"
-        listTitle="User orders"
-      />
+      {currentUser === id && (
+        <ListingList
+          data={userListings?.data}
+          emptyTitle="No user orders"
+          listTitle="User orders"
+        />
+      )}
     </div>
   );
 };
