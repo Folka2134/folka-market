@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ListingList from "@/components/shared/ListingList";
 import { auth } from "@clerk/nextjs";
+import CheckoutButton from "@/components/shared/CheckoutButton";
 
 const ListingPage = async ({ params: { id } }: SearchParamProps) => {
   const { sessionClaims } = auth();
@@ -48,7 +49,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                 <p>
                   Seller:{" "}
                   <Link
-                    href={`/profile/${user._id}`}
+                    href={`/profile/${user._id}/listings`}
                     className="text-blue-500 underline"
                   >
                     {user.username}
@@ -66,9 +67,8 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
             ) : (
               <div className="flex flex-col p-5 gap-3 border-black border-[1px] rounded-md">
                 <p>Price: £{listing.price}</p>
-                <Button>Buy now</Button>
+                <CheckoutButton listing={listing} />
                 <Button>Add to basket</Button>
-                {/* <Button>Watch item</Button> */}
                 <Button>Save item</Button>
               </div>
             )}
