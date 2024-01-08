@@ -10,7 +10,7 @@ type ListingCardProps = {
 
 const ListingCard = ({ listing }: ListingCardProps) => {
   return (
-    <div className="transtion-all group relative flex min-h-[300px] w-full min-w-[400px] flex-col overflow-hidden rounded-xl bg-white py-2 shadow-md hover:shadow-lg md:min-h-[438px]">
+    <div className="transtion-all group relative flex min-h-[300px] w-full  flex-col overflow-hidden rounded-xl bg-white py-2 shadow-md hover:shadow-lg md:min-h-[438px]">
       <Link
         href={`/listings/${listing._id}`}
         style={{ backgroundImage: `url(${listing.imageUrl})` }}
