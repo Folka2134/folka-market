@@ -14,11 +14,10 @@ const OrdersPage = async ({ params: { id } }: OrdersPageProps) => {
 
   return (
     <div>
-      <h2 className="flex justify-center my-5 font-medium text-xl">Orders</h2>
       <ListingList
         data={userListings?.data}
-        emptyTitle="No user listings"
-        listTitle="User listings"
+        emptyTitle="No user orders"
+        listTitle="User orders"
       />
     </div>
   );

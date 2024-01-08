@@ -27,6 +27,9 @@ const ListingCard = ({ listing }: ListingCardProps) => {
           <p className="line-clamp-2 flex-1 text-[16px] text-black md:text-[20px]">
             {listing.title}
           </p>
+          <p className="line-clamp-2 flex-1 text-[16px] text-black md:text-[20px] ">
+            £<span className="font-medium">{listing.price}</span>
+          </p>
           <p className="">
             by{" "}
             <span className="text-[#95A2F0]">

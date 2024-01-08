@@ -14,7 +14,6 @@ const ListingsPage = async ({ params: { id } }: ListingsPageProps) => {
 
   return (
     <div>
-      <h2 className="flex justify-center my-5 font-medium text-xl">Listings</h2>
       <ListingList
         data={userListings?.data}
         emptyTitle="No user listings"
