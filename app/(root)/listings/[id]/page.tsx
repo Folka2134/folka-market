@@ -7,10 +7,15 @@ import { getUserById } from "@/lib/actions/user.actions";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ListingList from "@/components/shared/ListingList";
+import { auth } from "@clerk/nextjs";
 
 const ListingPage = async ({ params: { id } }: SearchParamProps) => {
+  const { sessionClaims } = auth();
+  const currentUser = sessionClaims?.userId as string;
+
   const listing = await getListingById(id);
   const user = await getUserById(listing.user);
+
   const allListings = await getAllListings({ limit: 6 });
 
   const filteredListings = allListings?.data.filter(
@@ -51,7 +56,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                 </p>
               </div>
             </div>
-            {user._id === listing.user ? (
+            {currentUser === listing.user ? (
               <div className="flex flex-col p-5 gap-3">
                 <Link href={`/listings/${listing._id}/edit`}>
                   <Button>Edit listing</Button>
