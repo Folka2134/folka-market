@@ -25,8 +25,12 @@ const Navbar = () => {
                 <DropdownMenuItem>
                   <Link href={`/profile/${userId}/listings`}>Profile</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>Saved items</DropdownMenuItem>
-                <DropdownMenuItem>Orders</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href={`/profile/${userId}/saved`}>Saved items</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href={`/profile/${userId}/listings`}>Orders</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>Settings</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
