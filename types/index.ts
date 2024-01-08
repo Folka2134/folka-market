@@ -34,7 +34,8 @@ export type CreateListingParams = {
 export type UpdateListingParams = {
   userId: string
   listing: {
-    _id: string
+    _id: string | undefined
+    imageUrl: string,
     title: string,
     condition: string,
     location: string;
