@@ -51,13 +51,22 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col p-5 gap-3 border-black border-[1px] rounded-md">
-              <p>Price: £{listing.price}</p>
-              <Button>Buy now</Button>
-              <Button>Add to basket</Button>
-              {/* <Button>Watch item</Button> */}
-              <Button>Save item</Button>
-            </div>
+            {user._id === listing.user ? (
+              <div className="flex flex-col p-5 gap-3">
+                <Link href={`/listings/${listing._id}/edit`}>
+                  <Button>Edit listing</Button>
+                </Link>
+                <Button>Delete listing</Button>
+              </div>
+            ) : (
+              <div className="flex flex-col p-5 gap-3 border-black border-[1px] rounded-md">
+                <p>Price: £{listing.price}</p>
+                <Button>Buy now</Button>
+                <Button>Add to basket</Button>
+                {/* <Button>Watch item</Button> */}
+                <Button>Save item</Button>
+              </div>
+            )}
           </section>
         </article>
       </div>
