@@ -22,14 +22,14 @@ const listingEditPage = async ({ params: { id } }: EditListingProps) => {
       <section>
         <h1 className="text-center my-10 font-bold text-2xl">Edit Listing</h1>
 
-        <div className="wrapper">
+        {/* <div className="wrapper">
           <ListingForm
             userId={userId}
             type="Edit"
             listingId={id}
             listing={listing}
           />
-        </div>
+        </div> */}
       </section>
     </>
   );

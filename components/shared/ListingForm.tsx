@@ -24,19 +24,28 @@ import { consoles } from "@/constants";
 import { useUploadThing } from "@/lib/uploadthing";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createListing } from "@/lib/actions/listing.actions";
+import { createListing, updateListing } from "@/lib/actions/listing.actions";
 import { FileUploader } from "./FileUploader";
-
-const initialValues = defaultListingValues;
+import { IListing } from "@/lib/database/models/listing.model";
 
 type ListingFormProps = {
   userId: string;
-  type: string;
+  type: "Create" | "Edit";
+  listingId?: string;
+  listing?: IListing;
 };
 
-const ListingForm = ({ userId, type }: ListingFormProps) => {
+const ListingForm = ({
+  userId,
+  type,
+  listingId,
+  listing,
+}: ListingFormProps) => {
   const [files, setFiles] = useState<File[]>([]);
   const router = useRouter();
+
+  const initialValues =
+    listing && type === "Edit" ? listing : defaultListingValues;
 
   const { startUpload } = useUploadThing("imageUploader");
   // 1. Define your form.
@@ -47,16 +56,21 @@ const ListingForm = ({ userId, type }: ListingFormProps) => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof listingFormSchema>) {
+    console.log(values);
+
     let uploadedImageUrl = values.imageUrl;
 
+    console.log(uploadedImageUrl);
+
     if (files.length > 0) {
-      const uploadedImage = await startUpload(files);
+      const uploadedImages = await startUpload(files);
 
-      if (!uploadedImage) return;
+      if (!uploadedImages) {
+        return;
+      }
 
-      uploadedImageUrl = uploadedImage[0].url;
+      uploadedImageUrl = uploadedImages[0].url;
     }
-
     if (type === "Create") {
       console.log("trying to create");
 
@@ -77,6 +91,31 @@ const ListingForm = ({ userId, type }: ListingFormProps) => {
         console.log(error);
       }
     }
+
+    // if (type === "Edit") {
+    //   console.log("trying to edit");
+    //   if (!listingId) {
+    //     router.back();
+    //   }
+
+    //   try {
+    //     const newListing = await updateListing({
+    //       listing: {
+    //         ...values,
+    //         imageUrl: uploadedImageUrl,
+    //         _id: listingId,
+    //       },
+    //       userId,
+    //       path: `/listings/${listingId}`,
+    //     });
+    //     if (newListing) {
+    //       form.reset();
+    //       router.push(`/listings/${newListing._id}`);
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
   }
 
   return (
