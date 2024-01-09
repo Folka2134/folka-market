@@ -42,7 +42,12 @@ const Checkout = ({ listing, userId }: CheckoutProps) => {
 
   return (
     <form action={onCheckout} method="post">
-      <Button className="w-full" type="submit" role="link" size="lg">
+      <Button
+        className="w-full button hover:bg-[#B5B0FF]"
+        type="submit"
+        role="link"
+        size="lg"
+      >
         Buy product
       </Button>
     </form>

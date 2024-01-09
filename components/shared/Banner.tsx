@@ -9,6 +9,7 @@ const Banner = () => {
         alt="gaming banner"
         height={500}
         width={1200}
+        className="rounded-xl banner border-[1px]"
       />
     </div>
   );

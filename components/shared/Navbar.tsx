@@ -16,25 +16,29 @@ const Navbar = () => {
 
   return (
     <header className="w-full border-b">
-      <div className="flex items-center justify-between w-full h-14">
+      <div className="flex items-center justify-between w-full h-14 ">
         <div className="flex gap-5">
           <SignedIn>
             <DropdownMenu>
               <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link href={`/profile/${userId}/listings`}>Profile</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
+              <DropdownMenuContent className="bg-[#524D96]">
+                <Link href={`/profile/${userId}/listings`}>
+                  <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
+                    Profile
+                  </DropdownMenuItem>
+                </Link>
+                <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
                   <Link href={`/profile/${userId}/saved`}>Saved items</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
                   <Link href={`/profile/${userId}/listings`}>Orders</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
+                  Settings
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button className="bg-pink-400">
+            <Button className="bg-[#B5B0FF] font-semibold text-md">
               <Link href="/listings/create">Create listing</Link>
             </Button>
           </SignedIn>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Image from "next/image";
 import SearchSection from "./SearchSection";
@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="">
+    <div>
       <Navbar />
       <div className="flex w-full items-center">
         <Link href="/">

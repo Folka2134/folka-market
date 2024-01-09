@@ -14,7 +14,7 @@ const CheckoutButton = ({ listing }: { listing: IListing }) => {
   return (
     <>
       <SignedOut>
-        <Button asChild>
+        <Button asChild className="button hover:bg-[#B5B0FF]">
           <Link href="/sign-in">Buy product</Link>
         </Button>
       </SignedOut>
