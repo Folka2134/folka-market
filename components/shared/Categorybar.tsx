@@ -1,11 +1,14 @@
 import React from "react";
 import { CategoryList } from "@/constants/index";
+import Link from "next/link";
 
 const Categorybar = () => {
   return (
     <ul className="gap-5 mt-3 hidden sm:flex">
       {CategoryList.map((category) => (
-        <li key={category.label}>{category.label}</li>
+        <Link key={category.label} href={`/categories/${category.label}`}>
+          <li>{category.label}</li>
+        </Link>
       ))}
     </ul>
   );

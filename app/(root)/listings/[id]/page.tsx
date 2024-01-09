@@ -37,7 +37,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
               className="rounded-2xl border-black border-[1px] "
             />
           </div>
-          <article className="bg-[#524D96] bg-opacity-90 p-5 rounded-xl">
+          <article className="bg-black bg-opacity-75 p-5 rounded-xl">
             <h3 className="font-bold text-xl p-2 pl-0">{listing.title}</h3>
             <section className="flex gap-10">
               <div className="flex flex-col gap-3 text-lg font-light">

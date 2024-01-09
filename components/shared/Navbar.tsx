@@ -21,7 +21,7 @@ const Navbar = () => {
           <SignedIn>
             <DropdownMenu>
               <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-[#524D96]">
+              <DropdownMenuContent className="bg-black opacity-90">
                 <Link href={`/profile/${userId}/listings`}>
                   <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
                     Profile

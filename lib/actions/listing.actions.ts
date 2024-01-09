@@ -6,6 +6,7 @@ import User from "../database/models/user.model"
 import Listing from "../database/models/listing.model"
 import { revalidatePath } from "next/cache"
 import { handleError } from "../utils"
+import ListingsPage from "@/app/(root)/profile/[id]/listings/page"
 
 const getUserDetails = async (query: any) => {
   return query.populate({ path: "user", model: User, select: "_id firstName lastName" })
@@ -84,6 +85,22 @@ export const getAllListings = async ({limit= 6}: GetAllListingParams) => {
   }
 }
 
+export const getListingsByCategory = async (category: string) => {
+  try {
+    await connectToDatabase()
+    
+    const conditions = { category: category}
+
+    const listingsQuery =  Listing.find(conditions).sort({ createdAt: "desc"})
+
+    const listings = await getUserDetails(listingsQuery)
+
+    return { data: JSON.parse(JSON.stringify(listings))}
+  } catch (error) {
+    handleError(error)
+  }
+}
+
 export const getListingById = async (listingId: string) => {
   try {
     await connectToDatabase()
@@ -99,6 +116,8 @@ export const getListingById = async (listingId: string) => {
     handleError(error)
   }
 }
+
+
 
 export const getListingsByUser = async ({ userId, limit=6, page}: GetListingsByUserParams) => {
   try {
