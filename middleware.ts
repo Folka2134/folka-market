@@ -5,12 +5,12 @@ export default authMiddleware({
     '/',
     '/listings/:id',
     '/api/webhook/clerk',
-    // '/api/webhook/stripe',
+    '/api/webhook/stripe',
     '/api/uploadthing'
   ],
   ignoredRoutes: [
     '/api/webhook/clerk',
-    // '/api/webhook/stripe',
+    '/api/webhook/stripe',
     '/api/uploadthing'
   ]
 });
