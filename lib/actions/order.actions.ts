@@ -5,8 +5,11 @@ import Stripe from "stripe"
 import { redirect } from "next/navigation"
 import { auth } from "@clerk/nextjs"
 
-import { CheckoutOrderParams } from "@/types"
+import { CheckoutOrderParams, CreateOrderParams } from "@/types"
 import { handleError } from "../utils"
+import { connectToDatabase } from "../database"
+import OrdersPage from "@/app/(root)/profile/[id]/orders/page"
+import Order from "../database/models/order.model"
 
 export const checkoutOrder = async (order: CheckoutOrderParams) => {
   const { session } = auth()
@@ -42,5 +45,21 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
     redirect(session.url!)
   } catch (error) {
     throw error
+  }
+}
+
+export const createOrder = async (order: CreateOrderParams) => {
+  try {
+    await connectToDatabase()
+
+    const newOrder = await Order.create({
+      ...order,
+      listing: order.listingId,
+      buyer: order.buyerId
+    })
+
+    return JSON.parse(JSON.stringify(newOrder))
+  } catch (error) {
+    handleError(error)
   }
 }
