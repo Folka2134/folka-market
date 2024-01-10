@@ -53,6 +53,8 @@ export type DeleteListingParams = {
 }
 
 export type GetAllListingParams = {
+  query: string
+  pages: number
   limit: number
 }
 

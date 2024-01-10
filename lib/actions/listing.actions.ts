@@ -68,11 +68,15 @@ export const deleteListing = async ({ listingId, path }: DeleteListingParams) =>
   }
 }
 
-export const getAllListings = async ({limit= 6}: GetAllListingParams) => {
+export const getAllListings = async ({query, limit= 6, pages }: GetAllListingParams) => {
   try {
     await connectToDatabase()
+
+    const titleCondition = query ? { title: { $regex: query, $options: "i" }} : {}
     
-    const conditions = {}
+    const conditions = {
+      $and: [titleCondition]
+    }
 
     const listingsQuery = Listing.find(conditions).sort({createdAt: "desc"}).skip(0).limit(limit)
     
@@ -116,7 +120,6 @@ export const getListingById = async (listingId: string) => {
     handleError(error)
   }
 }
-
 
 
 export const getListingsByUser = async ({ userId, limit=6, page}: GetListingsByUserParams) => {
