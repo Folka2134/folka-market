@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import ListingList from "@/components/shared/ListingList";
 import { auth } from "@clerk/nextjs";
 import CheckoutButton from "@/components/shared/CheckoutButton";
+import { DeleteModal } from "@/components/shared/DeleteModal";
 
 const ListingPage = async ({ params: { id } }: SearchParamProps) => {
   const { sessionClaims } = auth();
@@ -17,7 +18,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
   const listing = await getListingById(id);
   const user = await getUserById(listing.user);
 
-  const allListings = await getAllListings({ limit: 6 });
+  const allListings = await getAllListings({ limit: 6, query: "", pages: 1 });
 
   const filteredListings = allListings?.data.filter(
     (item: any) =>
@@ -65,9 +66,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                       Edit listing
                     </Button>
                   </Link>
-                  <Button className="button hover:bg-[#B5B0FF]">
-                    Delete listing
-                  </Button>
+                  <DeleteModal listingId={listing._id} />
                 </div>
               ) : (
                 <div className="flex flex-col p-5 gap-3 border-[#B5B0FF] border-[1px] rounded-md">

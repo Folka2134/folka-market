@@ -19,7 +19,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
       <section className="my-10 w-full">
         <ListingList
           data={listings?.data}
-          emptyTitle="No Jobs Found"
+          emptyTitle="No Listings Found"
           listTitle="New Products"
         />
       </section>

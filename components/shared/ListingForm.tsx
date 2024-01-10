@@ -75,7 +75,7 @@ const ListingForm = ({
       console.log("trying to create");
 
       try {
-        const newJob = await createListing({
+        const newListing = await createListing({
           listing: {
             ...values,
             imageUrl: uploadedImageUrl,
@@ -83,9 +83,9 @@ const ListingForm = ({
           userId,
           path: "/profile",
         });
-        if (newJob) {
+        if (newListing) {
           form.reset();
-          router.push(`/listings/${newJob._id}`);
+          router.push(`/listings/${newListing._id}`);
         }
       } catch (error) {
         console.log(error);
