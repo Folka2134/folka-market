@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex w-full items-center">
+      <div className="flex flex-col w-full items-center md:flex-row">
         <Link href="/">
           <Image
             src="/assets/images/Folka-logos_transparentsmall.png"
