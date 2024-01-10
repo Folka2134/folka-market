@@ -4,14 +4,79 @@ export const CategoryList = [
     route: "/games/action"
   },
   {
-    label: "Farming",
-    route: "/games/farming"
+    label: "Adventure",
+    route: "/games/adventure"
   },
   {
-    label: "Racing",
-    route: "/games/racing"
+    label: "RPG",
+    route: "/games/rpg"
   },
-]
+  {
+    label: "Simulation",
+    route: "/games/simulation"
+  },
+  {
+    label: "Strategy",
+    route: "/games/strategy"
+  },
+  {
+    label: "Sports",
+    route: "/games/sports"
+  },
+  {
+    label: "Fighting",
+    route: "/games/fighting"
+  },
+  {
+    label: "Horror",
+    route: "/games/horror"
+  },
+  {
+    label: "Puzzle",
+    route: "/games/puzzle"
+  },
+  {
+    label: "Music",
+    route: "/games/music"
+  },
+  {
+    label: "Multiplayer",
+    route: "/games/multiplayer"
+  },
+  {
+    label: "FPS",
+    route: "/games/fps"
+  },
+  {
+    label: "TPS",
+    route: "/games/tps"
+  },
+  {
+    label: "MMO",
+    route: "/games/mmo"
+  },
+  {
+    label: "Battle Royale",
+    route: "/games/battle-royale"
+  },
+  {
+    label: "Survival",
+    route: "/games/survival"
+  },
+  {
+    label: "RTS",
+    route: "/games/rts"
+  },
+  {
+    label: "TBS",
+    route: "/games/tbs"
+  },
+  {
+    label: "Educational",
+    route: "/games/educational"
+  }
+];
+
 
 export const defaultListingValues = {
   id: "",

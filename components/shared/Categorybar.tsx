@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Categorybar = () => {
   return (
-    <ul className="gap-5 mt-3 hidden sm:flex">
+    <ul className="gap-5 mt-3 hidden md:flex md:flex-wrap">
       {CategoryList.map((category) => (
         <Link key={category.label} href={`/categories/${category.label}`}>
           <li>{category.label}</li>
