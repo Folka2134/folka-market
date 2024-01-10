@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { formUrlQuery, removeKeysFromQuery } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -18,8 +17,7 @@ const Searchbar = ({
 
   const handleEnterKeyPress = (e: any) => {
     if (e.key === "Enter" && query.trim() !== "") {
-      e.preventDefault(); // Prevents the default form submission behavior
-      // Trigger the button click
+      e.preventDefault();
       document.getElementById("searchButton")?.click();
     }
   };
