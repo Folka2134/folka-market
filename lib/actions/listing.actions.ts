@@ -139,3 +139,18 @@ export const getListingsByUser = async ({ userId, limit=6, page}: GetListingsByU
     handleError(error)
   }
 }
+
+
+export const deleteListingById = async ({ listingId, path}: DeleteListingParams) => {
+  try {
+    await connectToDatabase()
+
+    const deletedListing = await Listing.findByIdAndDelete(listingId)
+
+    if(deletedListing) console.log("listing deleted");
+    
+
+  } catch (error) {
+    handleError(error)
+  }
+}
