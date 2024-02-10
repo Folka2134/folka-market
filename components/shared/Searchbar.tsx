@@ -16,9 +16,11 @@ const Searchbar = ({
   const [query, setQuery] = useState("");
 
   const handleEnterKeyPress = (e: any) => {
-    if (e.key === "Enter" && query.trim() !== "") {
+    if (e.key === "Enter") {
       e.preventDefault();
-      document.getElementById("searchButton")?.click();
+      if (query.trim() !== "") {
+        document.getElementById("searchButton")?.click();
+      }
     }
   };
 
@@ -32,8 +34,11 @@ const Searchbar = ({
         className=""
         onKeyDown={handleEnterKeyPress}
       />
-      <Link href={`/search/${query}`}>
-        <Button id="searchButton" className="w-44 ml-2">
+      <Link href={query.trim() !== "" ? `/search/${query}` : "#"}>
+        <Button
+          id="searchButton"
+          className="w-44 ml-2 hover:scale-105 transition-transform duration-100"
+        >
           Search
         </Button>
       </Link>
