@@ -27,7 +27,9 @@ export const DeleteModal = ({ listingId }: { listingId: string }) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger>
-        <Button className="button hover:bg-[#B5B0FF]">Delete listing</Button>
+        <div className="button text-sm px-3 rounded-lg py-3 hover:bg-[#B5B0FF]">
+          Delete listing
+        </div>
       </AlertDialogTrigger>
 
       <AlertDialogContent className="bg-black bg-opacity-80">
