@@ -15,7 +15,7 @@ const Navbar = () => {
   const userId = sessionClaims?.userId as string;
 
   return (
-    <header className="w-full border-b">
+    <header className="w-full">
       <div className="flex items-center justify-between w-full h-14 ">
         <div className="flex gap-5">
           <SignedIn>
@@ -31,14 +31,14 @@ const Navbar = () => {
                   <Link href={`/profile/${userId}/saved`}>Saved items</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
-                  <Link href={`/profile/${userId}/listings`}>Orders</Link>
+                  <Link href={`/profile/${userId}/orders`}>Orders</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
                   Settings
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button className="bg-[#B5B0FF] font-semibold text-md">
+            <Button className="hover:bg-[#B5B0FF] bg-[#524D96] font-semibold text-md">
               <Link href="/listings/create">Create listing</Link>
             </Button>
           </SignedIn>

@@ -7,7 +7,9 @@ const Categorybar = () => {
     <ul className="gap-5 mt-3 hidden md:flex md:flex-wrap">
       {CategoryList.map((category) => (
         <Link key={category.label} href={`/categories/${category.label}`}>
-          <li>{category.label}</li>
+          <li className="hover:scale-105 transition-transform duration-75">
+            {category.label}
+          </li>
         </Link>
       ))}
     </ul>

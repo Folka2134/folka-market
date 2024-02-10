@@ -28,7 +28,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
   return (
     <>
       <div className="flex justify-center mt-5 mb-32">
-        <div className="flex items-center lg:justify-center gap-5 lg:flex-row flex-col">
+        <div className="flex lg:justify-center gap-5 lg:flex-row flex-col">
           <div>
             <Image
               src={listing.imageUrl}
@@ -38,7 +38,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
               className="rounded-2xl border-black border-[1px] "
             />
           </div>
-          <article className="bg-black bg-opacity-75 p-5 rounded-xl">
+          <article className="bg-black p-5 rounded-xl">
             <h3 className="font-bold text-xl p-2 pl-0">{listing.title}</h3>
             <section className="flex gap-10">
               <div className="flex flex-col gap-3 text-lg font-light">
