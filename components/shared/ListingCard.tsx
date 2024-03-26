@@ -1,6 +1,5 @@
 import { IListing } from "@/lib/database/models/listing.model";
 import { formatDateTime } from "@/lib/utils";
-import { auth } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
