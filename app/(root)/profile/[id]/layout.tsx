@@ -15,7 +15,7 @@ export default function ProfileLayout({
     <div className="flex flex-col px-2 sm:px-10 lg:px-16 2xl:px-64">
       {currentUser === id && (
         <div>
-          <ul className="flex gap-5 justify-center my-5">
+          <ul className="flex gap-5 justify-center mt-10 text-lg font-semibold">
             <Link href={`/profile/${currentUser}/listings`}>Listings</Link>
             <Link href={`/profile/${currentUser}/saved`}>Saved</Link>
             <Link href={`/profile/${currentUser}/orders`}>Orders</Link>
