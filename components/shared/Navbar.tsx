@@ -21,24 +21,24 @@ const Navbar = () => {
           <SignedIn>
             <DropdownMenu>
               <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-black opacity-90">
+              <DropdownMenuContent className="">
                 <Link href={`/profile/${userId}/listings`}>
-                  <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
+                  <DropdownMenuItem className="cursor-pointer">
                     Profile
                   </DropdownMenuItem>
                 </Link>
-                <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
+                <DropdownMenuItem className="cursor-pointer">
                   <Link href={`/profile/${userId}/saved`}>Saved items</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
+                <DropdownMenuItem className="cursor-pointer">
                   <Link href={`/profile/${userId}/orders`}>Orders</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-[#938FC9] cursor-pointer">
+                <DropdownMenuItem className="cursor-pointer">
                   Settings
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button className="hover:bg-[#B5B0FF] bg-[#524D96] font-semibold text-md">
+            <Button className="font-semibold text-md">
               <Link href="/listings/create">Create listing</Link>
             </Button>
           </SignedIn>
