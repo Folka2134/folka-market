@@ -34,9 +34,9 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
             alt="product image"
             height={350}
             width={350}
-            className="rounded-2xl border-black border-[1px] "
+            className=""
           />
-          <article className="bg-black p-5 rounded-xl">
+          <article className="p-5 rounded-xl">
             <h3 className="font-bold text-xl p-2 pl-0">{listing.title}</h3>
             <section className="flex gap-10">
               <div className="flex flex-col gap-3 text-lg font-light">
@@ -67,7 +67,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                   <DeleteModal listingId={listing._id} />
                 </div>
               ) : (
-                <div className="flex flex-col p-5 gap-3 border-[#B5B0FF] border-[1px] rounded-md">
+                <div className="flex flex-col p-5 gap-3">
                   <p>Price: £{listing.price}</p>
                   <CheckoutButton listing={listing} />
                   <Button className="button hover:bg-[#B5B0FF]">
