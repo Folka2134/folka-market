@@ -27,7 +27,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
 
   return (
     <>
-      <div className="flex justify-center mt-5 mb-32">
+      <div className="flex justify-center mt-10 mb-24">
         <div className="flex lg:justify-center gap-5 lg:flex-row flex-col items-center">
           <Image
             src={listing.imageUrl}
@@ -37,14 +37,14 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
             className=""
           />
           <article className="p-5 rounded-xl">
-            <h3 className="font-bold text-xl p-2 pl-0">{listing.title}</h3>
+            <h3 className="font-bold text-xl p-2 mb-3 pl-0">{listing.title}</h3>
             <section className="flex gap-10">
-              <div className="flex flex-col gap-3 text-lg font-light">
+              <div className="flex flex-col gap-5 text-lg font-light">
                 <p>Category: {listing.category}</p>
                 <p>Console: {listing.console}</p>
                 <p>Condition: {listing.condition}</p>
                 <div>
-                  <p>Posted: {formatDateTime(listing.datePosted).dateOnly}</p>
+                  <p>Post by: {formatDateTime(listing.datePosted).dateOnly}</p>
                   <p>Location: {listing.location}</p>
                   <p>
                     Seller:{" "}
@@ -60,9 +60,7 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
               {currentUser === listing.user ? (
                 <div className="flex flex-col p-5 gap-3">
                   <Link href={`/listings/${listing._id}/edit`}>
-                    <Button className="button hover:bg-[#B5B0FF]">
-                      Edit listing
-                    </Button>
+                    <Button className="button">Edit listing</Button>
                   </Link>
                   <DeleteModal listingId={listing._id} />
                 </div>
@@ -70,12 +68,8 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                 <div className="flex flex-col p-5 gap-3">
                   <p>Price: £{listing.price}</p>
                   <CheckoutButton listing={listing} />
-                  <Button className="button hover:bg-[#B5B0FF]">
-                    Add to basket
-                  </Button>
-                  <Button className="button hover:bg-[#B5B0FF]">
-                    Save item
-                  </Button>
+                  <Button className="button">Add to basket</Button>
+                  <Button className="button">Save item</Button>
                 </div>
               )}
             </section>

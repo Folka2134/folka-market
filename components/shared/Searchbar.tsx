@@ -25,7 +25,7 @@ const Searchbar = ({
   };
 
   return (
-    <div className="flex min-w-[54px]">
+    <div className="flex min-w-[54px] max-w-96">
       <Input
         type="text"
         placeholder={placeholder}
@@ -37,7 +37,7 @@ const Searchbar = ({
       <Link href={query.trim() !== "" ? `/search/${query}` : "#"}>
         <Button
           id="searchButton"
-          className="w-44 ml-2 hover:scale-105 transition-transform duration-100"
+          className="ml-2 hover:scale-105 transition-transform duration-100 "
         >
           Search
         </Button>

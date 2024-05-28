@@ -16,7 +16,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
   return (
     <main className="flex flex-col items-center ">
       <Banner />
-      <section className="my-10 w-full">
+      <section className="my-5 w-full">
         <ListingList
           data={listings?.data}
           emptyTitle="No Listings Found"
