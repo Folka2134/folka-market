@@ -31,13 +31,13 @@ const Searchbar = ({
         placeholder={placeholder}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className=""
+        className="rounded-xl"
         onKeyDown={handleEnterKeyPress}
       />
       <Link href={query.trim() !== "" ? `/search/${query}` : "#"}>
         <Button
           id="searchButton"
-          className="ml-2 hover:scale-105 transition-transform duration-100 "
+          className="ml-2 hover:scale-105 transition-transform duration-100 rounded-xl"
         >
           Search
         </Button>
