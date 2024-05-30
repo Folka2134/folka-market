@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full h-14 ">
         <div className="flex gap-5">
           <SignedIn>
-            <div className="bg-white rounded flex justify-center items-center px-3 gap-5 border-[1px] border-gray-400">
+            <div className="bg-white rounded-lg flex justify-center items-center px-3 gap-5 border-[1px] border-gray-400">
               <DropdownMenu>
                 <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-white">
@@ -45,13 +45,13 @@ const Navbar = () => {
             </div>
           </SignedIn>
         </div>
-        <div className="flex w-32 justify-end gap-3">
+        <div className="flex w-34 justify-end gap-3">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
           <SignedOut>
-            <button className="rounded-full">
-              <Link href="/sign-in">Signin/Signup</Link>
+            <button className="bg-white rounded-lg px-3 hover:bg-[#FF5E00] transition-colors duration-300 ease-in-out">
+              <Link href="/sign-in">Signin / Signup</Link>
             </button>
           </SignedOut>
         </div>
