@@ -9,10 +9,10 @@ import twitter from "../../public/assets/images/twitter.svg";
 
 const Footer = () => {
   return (
-    <footer className="flexCenter mb-12 mt-24">
-      <div className="padding-container max-container flex w-full flex-col gap-10">
-        <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1">
+    <footer className="mb-12 mt-auto">
+      <div className="flex w-full flex-col gap-10">
+        <div className="flex gap-[10%] md:flex-row">
+          <div className="flex flex-wrap gap-10 md:flex-1 border-y-2 py-10">
             {FOOTER_LINKS.map((columns, index) => (
               <FooterColumn title={columns.title} key={index}>
                 <ul className="regular-14 flex flex-col gap-4 text-gray-30">
@@ -59,7 +59,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border bg-gray-20" />
         <p className="regular-14 w-full text-center text-gray-30">
           2024 Folka Market | All rights reserved
         </p>
