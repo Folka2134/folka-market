@@ -12,7 +12,7 @@ const CategoryPage = async ({ params: { category } }: CategoryPageProps) => {
   const listings = await getListingsByCategory(category);
 
   return (
-    <div>
+    <div className="mt-5 mb-52">
       <ListingList
         data={listings?.data}
         emptyTitle={`No ${category} listings found`}
