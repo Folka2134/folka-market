@@ -8,15 +8,15 @@ const CreateListingPage = () => {
   const userId = sessionClaims?.userId as string;
 
   return (
-    <>
+    <div className="flex justify-center">
       <section>
         <h1 className="text-center my-10 font-bold text-2xl">Create Listing</h1>
 
-        <div className="wrapper">
+        <div className="">
           <ListingForm userId={userId} type="Create" />
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

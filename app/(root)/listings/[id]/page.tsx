@@ -58,18 +58,24 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                 </div>
               </div>
               {currentUser === listing.user ? (
-                <div className="flex flex-col p-5 gap-3">
+                <div className="flex flex-col p-5 gap-2">
                   <Link href={`/listings/${listing._id}/edit`}>
-                    <Button className="button">Edit listing</Button>
+                    <Button className="button hover:scale-105 transition-transform duration-75">
+                      Edit listing
+                    </Button>
                   </Link>
                   <DeleteModal listingId={listing._id} />
                 </div>
               ) : (
-                <div className="flex flex-col p-5 gap-3">
+                <div className="flex flex-col p-5 gap-1">
                   <p>Price: £{listing.price}</p>
                   <CheckoutButton listing={listing} />
-                  <Button className="button">Add to basket</Button>
-                  <Button className="button">Save item</Button>
+                  <Button className="button hover:scale-105 transition-transform duration-75">
+                    Add to basket
+                  </Button>
+                  <Button className="button hover:scale-105 transition-transform duration-75">
+                    Save item
+                  </Button>
                 </div>
               )}
             </section>

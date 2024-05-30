@@ -50,12 +50,12 @@ export function FileUploader({
         <div className="text-grey-500 flex flex-col items-center justify-center py-5">
           <Image
             src="/assets/icons/upload.svg"
-            width={77}
-            height={77}
+            width={100}
+            height={50}
             alt="file upload"
           />
-          <h3 className="mb-2 mt-2">Drag Company logo here</h3>
-          <p className="p-medium-12 mb-4">SVG, PNG, JPG</p>
+          <h3 className="">Click/Drag image here</h3>
+          <p className="p-medium-12">(SVG, PNG, JPG)</p>
           {/* <Button type="button" className="rounded-full">
             Select from computer
           </Button> */}

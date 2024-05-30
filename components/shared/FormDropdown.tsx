@@ -18,7 +18,7 @@ const FormDropDown = ({ value, onChangeHandler, items }: DropdownProps) => {
       <SelectTrigger className="select-field">
         <SelectValue placeholder={Object.keys(items)} />
       </SelectTrigger>
-      <SelectContent className="bg-black bg-opacity-90">
+      <SelectContent className="bg-black bg-opacity-90 text-white">
         {Object.keys(items).length > 0 &&
           Object.keys(items).map((key) =>
             items[key].map((item) => (
