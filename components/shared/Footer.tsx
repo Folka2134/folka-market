@@ -9,7 +9,7 @@ import twitter from "../../public/assets/images/twitter.svg";
 
 const Footer = () => {
   return (
-    <footer className="mb-12 mt-auto">
+    <footer className="mb-12 pt-52 mt-auto">
       <div className="flex w-full flex-col gap-10">
         <div className="flex gap-[10%] md:flex-row">
           <div className="flex flex-wrap gap-10 md:flex-1 border-y-2 py-10">
