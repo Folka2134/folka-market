@@ -73,9 +73,9 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                   <Button className="button hover:scale-105 transition-transform duration-75">
                     Add to basket
                   </Button>
-                  <Button className="button hover:scale-105 transition-transform duration-75">
+                  {/* <Button className="button hover:scale-105 transition-transform duration-75">
                     Save item
-                  </Button>
+                  </Button> */}
                 </div>
               )}
             </section>
