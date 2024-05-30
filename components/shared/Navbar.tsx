@@ -28,9 +28,9 @@ const Navbar = () => {
                       Profile
                     </DropdownMenuItem>
                   </Link>
-                  <DropdownMenuItem className="cursor-pointer">
+                  {/* <DropdownMenuItem className="cursor-pointer">
                     <Link href={`/profile/${userId}/saved`}>Saved items</Link>
-                  </DropdownMenuItem>
+                  </DropdownMenuItem> */}
                   <DropdownMenuItem className="cursor-pointer">
                     <Link href={`/profile/${userId}/orders`}>Orders</Link>
                   </DropdownMenuItem>

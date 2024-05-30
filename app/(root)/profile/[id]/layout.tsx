@@ -17,7 +17,7 @@ export default function ProfileLayout({
         <div>
           <ul className="flex gap-5 justify-center mt-10 text-lg font-semibold">
             <Link href={`/profile/${currentUser}/listings`}>Listings</Link>
-            <Link href={`/profile/${currentUser}/saved`}>Saved</Link>
+            {/* <Link href={`/profile/${currentUser}/saved`}>Saved</Link> */}
             <Link href={`/profile/${currentUser}/orders`}>Orders</Link>
           </ul>
         </div>
