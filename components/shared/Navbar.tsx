@@ -19,28 +19,30 @@ const Navbar = () => {
       <div className="flex items-center justify-between w-full h-14 ">
         <div className="flex gap-5">
           <SignedIn>
-            <DropdownMenu>
-              <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white">
-                <Link href={`/profile/${userId}/listings`}>
+            <div className="bg-white rounded flex justify-center items-center px-3 gap-5 border-[1px] border-gray-400">
+              <DropdownMenu>
+                <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white">
+                  <Link href={`/profile/${userId}/listings`}>
+                    <DropdownMenuItem className="cursor-pointer">
+                      Profile
+                    </DropdownMenuItem>
+                  </Link>
                   <DropdownMenuItem className="cursor-pointer">
-                    Profile
+                    <Link href={`/profile/${userId}/saved`}>Saved items</Link>
                   </DropdownMenuItem>
-                </Link>
-                <DropdownMenuItem className="cursor-pointer">
-                  <Link href={`/profile/${userId}/saved`}>Saved items</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <Link href={`/profile/${userId}/orders`}>Orders</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Settings
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Button className="font-semibold text-md">
-              <Link href="/listings/create">Create listing</Link>
-            </Button>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <Link href={`/profile/${userId}/orders`}>Orders</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    Settings
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Button className="font-semibold text-md p-0">
+                <Link href="/listings/create">Create listing</Link>
+              </Button>
+            </div>
           </SignedIn>
         </div>
         <div className="flex w-32 justify-end gap-3">
