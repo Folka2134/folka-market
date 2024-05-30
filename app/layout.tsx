@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className="primary-text min-h-screen">{children}</body>
+        <body className="min-h-screen bg-[url('/assets/images/background1.svg')] bg-repeat-x">
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
