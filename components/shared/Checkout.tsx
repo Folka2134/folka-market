@@ -41,7 +41,7 @@ const Checkout = ({ listing, userId }: CheckoutProps) => {
   };
 
   return (
-    <form action={onCheckout} method="post">
+    <form action={onCheckout}>
       <Button
         className="w-full button hover:bg-[#9900FF] hover:text-white transition-all duration-200 border-2"
         type="submit"
