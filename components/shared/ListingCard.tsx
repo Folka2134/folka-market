@@ -9,7 +9,7 @@ type ListingCardProps = {
 
 const ListingCard = ({ listing }: ListingCardProps) => {
   return (
-    <div className="card transtion-all group relative flex min-h-[300px] w-full  flex-col overflow-hidden rounded-xl py-2 shadow-md hover:shadow-lg md:min-h-[438px]">
+    <div className=" transtion-all group relative flex min-h-[300px] w-full  flex-col overflow-hidden rounded-xl py-2 shadow-md hover:shadow-lg md:min-h-[438px]">
       <Link
         href={`/listings/${listing._id}`}
         style={{ backgroundImage: `url(${listing.imageUrl})` }}
@@ -20,12 +20,16 @@ const ListingCard = ({ listing }: ListingCardProps) => {
         className="flex  flex-col gap-2 p-5 md:gap-4"
       >
         <div className="flex flex-col gap-2">
-          <p className="">{formatDateTime(listing.datePosted).dateTime}</p>
+          <div className="flex justify-between w-full">
+            <p className="text-center">
+              {formatDateTime(listing.datePosted).dateTime}
+            </p>
+            <p className="line-clamp-2 text-[16px]  md:text-[20px] ">
+              £{listing.price}
+            </p>
+          </div>
           <p className="line-clamp-2 flex-1 text-[16px]  md:text-[20px]">
             {listing.title}
-          </p>
-          <p className="line-clamp-2 flex-1 text-[16px]  md:text-[20px] ">
-            £<span className="font-medium">{listing.price}</span>
           </p>
         </div>
       </Link>

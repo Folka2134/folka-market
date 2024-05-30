@@ -12,7 +12,7 @@ export default function ProfileLayout({
   const currentUser = sessionClaims?.userId as string;
 
   return (
-    <div className="flex flex-col px-2 sm:px-10 lg:px-16 2xl:px-64">
+    <div className="flex flex-col px-2 sm:px-10 lg:px-16 2xl:px-44">
       {currentUser === id && (
         <div>
           <ul className="flex gap-5 justify-center mt-10 text-lg font-semibold">
