@@ -67,10 +67,10 @@ const ListingPage = async ({ params: { id } }: SearchParamProps) => {
                   <DeleteModal listingId={listing._id} />
                 </div>
               ) : (
-                <div className="flex flex-col p-5 gap-1">
+                <div className="flex flex-col p-5 gap-3 text-center">
                   <p>Price: £{listing.price}</p>
                   <CheckoutButton listing={listing} />
-                  <Button className="button hover:scale-105 transition-transform duration-75">
+                  <Button className="button hover:scale-105 transition-transform duration-75 border-2">
                     Add to basket
                   </Button>
                   {/* <Button className="button hover:scale-105 transition-transform duration-75">
