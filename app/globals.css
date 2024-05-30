@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* background: FDF0D5
+main: 669BBC
+secondary: 003049
+accent: FF5E00
+error: D62828
+error2:780000 
+
+main2: 9900FF
+secondary2: 560090
+*/
+
+
+
 /* @layer base {
   :root {
     --background: #231F63;

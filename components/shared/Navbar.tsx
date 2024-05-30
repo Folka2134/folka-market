@@ -21,7 +21,7 @@ const Navbar = () => {
           <SignedIn>
             <DropdownMenu>
               <DropdownMenuTrigger>My Account</DropdownMenuTrigger>
-              <DropdownMenuContent className="z-10">
+              <DropdownMenuContent className="bg-white">
                 <Link href={`/profile/${userId}/listings`}>
                   <DropdownMenuItem className="cursor-pointer">
                     Profile

@@ -37,7 +37,8 @@ const Searchbar = ({
       <Link href={query.trim() !== "" ? `/search/${query}` : "#"}>
         <Button
           id="searchButton"
-          className="ml-2 hover:scale-105 transition-transform duration-100 rounded-xl"
+          className="ml-2 hover:scale-105 transition-transform duration-100 rounded-xl bg-white"
+          variant="outline"
         >
           Search
         </Button>
