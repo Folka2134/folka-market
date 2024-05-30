@@ -21,7 +21,7 @@ const Banner = () => {
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.play}
     >
-      <CarouselContent className="flex items-center p-1 my-10">
+      <CarouselContent className="flex items-center p-1 mb-10">
         {/* {Array.from({ length: 5 }).map((_, index) => ( */}
         <CarouselItem>
           <div className="flex items-center justify-center">
