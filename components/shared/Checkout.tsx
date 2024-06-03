@@ -3,7 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import { Button } from "../ui/button";
 import { IListing } from "@/lib/database/models/listing.model";
-import { checkoutOrder } from "@/lib/actions/order.actions";
+import { checkoutOrder, createOrder } from "@/lib/actions/order.actions";
 
 type CheckoutProps = {
   listing: IListing;
@@ -37,6 +37,7 @@ const Checkout = ({ listing, userId }: CheckoutProps) => {
       buyerId: userId,
     };
 
+    await createOrder(order);
     await checkoutOrder(order);
   };
 

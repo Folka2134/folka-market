@@ -42,7 +42,9 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
       success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/`,
       cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/`,
     });
-    redirect(session.url!)
+    console.log(session.id);
+    
+    // redirect(session.url!)
   } catch (error) {
     throw error
   }
@@ -53,9 +55,10 @@ export const createOrder = async (order: CreateOrderParams) => {
     await connectToDatabase()
 
     const newOrder = await Order.create({
-      ...order,
       listing: order.listingId,
-      buyer: order.buyerId
+      buyer: order.buyerId,
+      price: order.price,
+      createdAt: new Date(),
     })
 
     return JSON.parse(JSON.stringify(newOrder))

@@ -1,9 +1,10 @@
 import { Schema, model, models, Document } from 'mongoose'
 
+// stripeId: string
 export interface IOrder extends Document {
+  _id: string
   createdAt: Date
-  stripeId: string
-  totalAmount: string
+  price: string
   listing: {
     _id: string
     title: string
@@ -17,7 +18,7 @@ export interface IOrder extends Document {
 
 export type IOrderItem = {
   _id: string
-  totalAmount: string
+  price: string
   createdAt: Date
   listingTitle: string
   listingId: string
@@ -25,16 +26,12 @@ export type IOrderItem = {
 }
 
 const OrderSchema = new Schema({
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
   stripeId: {
     type: String,
-    required: true,
+    // required: true,
     unique: true,
   },
-  totalAmount: {
+  price: {
     type: String,
   },
   listing: {
@@ -44,6 +41,10 @@ const OrderSchema = new Schema({
   buyer: {
     type: Schema.Types.ObjectId,
     ref: 'User',
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 })
 
