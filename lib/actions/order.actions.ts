@@ -17,8 +17,7 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
   const userId = session?.userId as string
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-  const price = Number(order.price) * 100
+  const price = Math.round(par(order.price)) * 100;
 
   try {
    const session = await stripe.checkout.sessions.create({
