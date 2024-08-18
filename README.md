@@ -1,3 +1,32 @@
+
+# Folka Market
+
+Folka Marketplace is an online platform where users can buy and sell video games. The project offers CRUD (Create, Read, Update, Delete) functionality, allowing users to list games for sale, browse available games, and manage their listings. It also integrates Clerk for user profile management, enabling secure user authentication, profile creation, and management.
+
+## Demo
+https://folka-market.vercel.app/
+## Usage/Examples
+
+Purchase items through stripe.
+
+Email: test@gmail.com\
+Card Number: 4242 4242 4242 4242\
+Exp Date: 02 / 42\
+CVC: 424\
+Country or Region: United Kingdom\
+Postcode: 424242
+
+
+![App Screenshot](https://raw.githubusercontent.com/Folka2134/folka-market/main/public/assets/images/stripe_test.jpg)
+
+
+## Features
+
+- CRUD functionality
+- Purchase through stripe
+- Retrieve orders from Mongodb
+
+
 ## Run Locally
 
 Clone the project
@@ -46,5 +75,5 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=[STRIPE_PUBLIC_KEY]
 STRIPE_SECRET_KEY=[STRIPE_SECRET_KEY]
 STRIPE_WEBHOOK_SECRET=[STRIPE_WEBHOOK_SECRET]
 
-NEXT_PUBLIC_SERVER_URL=[PUBLIC_SERVER_URL]
+NEXT_PUBLIC_SERVER_URL=[PUBLIC_SERVER_URL] 
 ```
