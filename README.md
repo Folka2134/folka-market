@@ -1,1 +1,50 @@
-This is a backend template for Clerk authentication and Mongodb connection. Including the synchronization of user data via the clerk webhook
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Folka2134/folka-market
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+Create .env.local
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=[CLERK_NEXT_SECRET]
+CLERK_SECRET_KEY=[CLERK_AUTHENTICATION_SECRET]
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+MONGODB_URI=[MONGODB_URI]
+
+WEBHOOK_SECRET=[CLERK_WEBHOOK_SECRET]
+
+UPLOADTHING_SECRET=[UPLOADTHING_SECRET]
+UPLOADTHING_APP_ID= [UPLOADTHING_ID]
+
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=[STRIPE_PUBLIC_KEY]
+STRIPE_SECRET_KEY=[STRIPE_SECRET_KEY]
+STRIPE_WEBHOOK_SECRET=[STRIPE_WEBHOOK_SECRET]
+
+NEXT_PUBLIC_SERVER_URL=[PUBLIC_SERVER_URL]
+```
